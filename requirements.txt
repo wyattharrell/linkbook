@@ -25,7 +25,7 @@ Pillow==6.2.1
 protobuf==3.11.2
 pyasn1==0.4.8
 pyasn1-modules==0.2.7
-pycryptodome==3.4.3
+pycryptodome==3.6.6
 Pyrebase==3.0.27
 python-dateutil==2.8.1
 python-jwt==2.0.1
