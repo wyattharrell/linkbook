@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <style>
+  footer {
+    padding: 10px 20px;
+    background: #1D2024;
+    color: white;
+  }
+  </style>
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/"><img src="static/linkbook_logo_white.png" style="width:100px" alt="Linkbook Logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <a class="nav-link" href="/login" style="color:white">Log In</a>
+      <a class="nav-link" href="/register" style="color:white">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- CAROUSEL -->
+  <div class="bd-example">
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="10000">
+          <img src="static/carousel_landing.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <a class="btn btn-outline-light btn-lg" href="/login" role="button">Log In</a>
+            <a class="btn btn-dark btn-lg" href="/register" role="button">Sign Up</a>
+            <br><br>
+          </div>
+        </div>
+        <div class="carousel-item" data-interval="10000">
+          <img src="static/carousel_landing2.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="static/carousel_landing.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BODY CONTENT -->
+
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-5">
+      <br>
+      <br>
+      <br><br><br>
+      <h1>Stay <span class="badge badge-secondary">organized</span> with Linkbook.</h1>
+      <br>
+      Linkbook is a powerful tool that can store your favorite links, keep you organized, and much more. Linkbook does all the heavy lifting for you by parsing websites to give you a clean and clear snapshot of each page you save.
+    </div>
+    <div class="col-md-5">
+      <br><br><br>
+      <img src="static/main_landing.png" align="right" style="width:600px" alt="Linkbook Logo"></a>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+
+  <br><br><br>
+  <img src="static/rectangle.png" align="right" style="width: 100%;" alt="Linkbook Logo">
+  <br><br><br><br><br><br><br>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <footer>
+    <p>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8"><br>
+          <img src="static/linkbook_logo_white.png" style="width:250px" alt="Linkbook Logo"></div>
+          <div class="col-md-3"><br><b>About</b><br>Software Engineering 2019<br>© Wyatt Harrell</div></div>
+          <div class="col-md-1"></div>
+        </div>
+      </div>
+    </p>
+    <center><br><br>{{footer}}</center>
+  </footer>
+</body>
+
+</html>

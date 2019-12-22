@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <link rel="stylesheet" type="text/css" href="CSS/home.css" media="screen" /> -->
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+  <style>
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+  }
+
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+  }
+
+  #sidebar-wrapper .list-group {
+    width: 15rem;
+  }
+
+  #page-content-wrapper {
+    min-width: 100vw;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+    }
+  }
+
+  footer {
+    padding: 10px 20px;
+    background: #343A40;
+    color: white;
+  }
+
+  body {
+    background-color: #F7F8FB;
+  }
+
+  .card-container {
+    display: grid;
+  }
+
+
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+  }
+
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+  }
+
+  #sidebar-wrapper .list-group {
+    width: 15rem;
+  }
+
+  #page-content-wrapper {
+    min-width: 100vw;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+    }
+  }
+
+  .card-body {
+    background-color: #eee; /*E9ECEF*/
+    color: #444;
+    /*    cursor: pointer;*/
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+
+  #limheight {
+    height: 300px;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+
+  #limheight li {
+    display: inline-block;
+  }
+
+  body {
+    background-color: #F7F8FB;
+  }
+
+  footer {
+    padding: 10px 20px;
+    background: #1D2024;
+    color: white;
+  }
+
+  .thumbnail {
+    position: relative;
+  }
+
+  .caption {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+  }
+
+</style>
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-dark border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading"><a href="/categories"><img src="static/linkbook_logo_white.png" style="width:175px" alt="Linkbook Logo"></a></div>
+      <div class="list-group list-group-flush">
+        <a href="/dashboard" class="list-group-item list-group-item-action bg-dark"><font color="white">Dashboard</font></a>
+        <a href="/categories" class="list-group-item list-group-item-action bg-dark"><font color="white">Categories</font></a>
+        <a href="/all" class="list-group-item list-group-item-action bg-dark"><font color="white">All Links</font></a>
+        <a href="/logout" class="list-group-item list-group-item-action bg-dark"><font color="white">Logout</font></a>
+      </div>
+    </div>
+
+
+    <!-- BLANK NAVBAR -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-light border-bottom">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <br><br>
+          </ul>
+        </div>
+      </nav>
+
+      <br>
+
+      <!--BREADCRUM-->
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+              <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
+              <li class="breadcrumb-item"><a href="/all">All Links</a></li>
+            </ol></nav></div>
+            <div class="col-md-1"></div>
+          </div>
+
+
+
+
+          <br>
+
+          <!--CATEGORY BREAKDOWN-->
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <h3 class="display-5">Content Breakdown</h3><br>
+              <div class="progress" style="height: 25px;">
+                {% for x in keys %}
+                {% if loop.index0 % 2 == 1 %}
+                <div class="progress-bar" role="progressbar" style="width: {{lengthOfBars}}%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{x}}</div>
+                {% endif %}
+                {% if loop.index0 % 2 == 0 %}
+                <div class="progress-bar bg-success" role="progressbar" style="width: {{lengthOfBars}}%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">{{x}}</div>
+                {% endif %}
+                {% endfor %}
+
+
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+
+          <br>
+
+
+
+          <!--LINKS BREAKDOWN-->
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+
+              <br>
+              <center>
+                <h4>Links Per Category</h4>
+                <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-10"><center>
+                    You have a total of <span class="badge badge-dark">{{totalNumberOfLinks}}</span> links
+                    and a total of <span class="badge badge-dark">{{totalNumberOfCategories}}</span> categories.
+                  </center>
+                </div>
+                <div class="col-md-1"></div>
+              </div>
+            </center>
+            <center>
+              <canvas id="chart2" width="900" height="400"></canvas>
+              <script>
+              // bar chart data
+              var barData = {
+                labels : [
+                  {% for x in keys %}
+                  "{{ x }}",
+                  {% endfor %}
+                ],
+                datasets : [{
+                  fillColor: "rgba(52, 73, 94, 1)",
+                  strokeColor: "rgba(52, 73, 94, 1)",
+                  pointColor: "rgba(151,187,205,1)",
+                  data : [
+                    {% for x in numberOfLinks %}
+                    "{{x}}",
+                    {% endfor %}
+                  ]
+                }
+              ]
+            }
+            // get bar chart canvas
+            var mychart = document.getElementById("chart2").getContext("2d");
+            steps = 10
+            max = {{maxY}}
+            // draw bar chart
+            new Chart(mychart).Bar(barData, {
+              scaleOverride: true,
+              scaleSteps: steps,
+              scaleStepWidth: Math.ceil(max / steps),
+              scaleStartValue: 0,
+              scaleShowVerticalLines: true,
+              scaleShowGridLines : true,
+              barShowStroke : true,
+              scaleShowLabels: true
+            }
+          );
+          </script>
+
+        </center>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+
+
+
+
+
+
+
+    <br>
+
+
+
+
+
+
+
+
+    <!--LINKS BREAKDOWN-->
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+
+        <br>
+        <center>
+          <h4>Category Visits</h4>
+          Displays your frequency of visits per category.
+        </center>
+        <center>
+          <canvas id="chart" width="900" height="400"></canvas>
+          <script>
+          // bar chart data
+          var barData = {
+            labels : [
+              {% for x in keys %}
+              "{{ x }}",
+              {% endfor %}
+            ],
+            datasets : [{
+              fillColor: "rgba(52, 73, 94, 1)",
+              strokeColor: "rgba(52, 73, 94, 1)",
+              pointColor: "rgba(151,187,205,1)",
+              data : [
+                {% for x in listOfClicks %}
+                "{{x}}",
+                {% endfor %}
+              ]
+            }
+          ]
+        }
+        // get bar chart canvas
+        var mychart = document.getElementById("chart").getContext("2d");
+        steps = 10
+        max = {{ maxClicks }}
+        // draw bar chart
+        new Chart(mychart).Bar(barData, {
+          scaleOverride: true,
+          scaleSteps: steps,
+          scaleStepWidth: Math.ceil(max / steps),
+          scaleStartValue: 0,
+          scaleShowVerticalLines: true,
+          scaleShowGridLines : true,
+          barShowStroke : true,
+          scaleShowLabels: true
+        }
+      );
+      </script>
+
+    </center>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+
+
+
+
+
+
+
+
+
+<br><br>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <h3 class="display-5">Content Management</h3><br>
+    <a href="{{url_for('dashboard', delete=True)}}"><button type="button" class="btn btn-danger btn-lg btn-block">Delete All</button></a>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+
+
+<br>
+<br>
+<br>
+
+
+
+</div>
+</div>
+
+
+
+
+<footer>
+  <p>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-8">
+        <img src="static/linkbook_logo_white.png" style="width:250px" alt="Linkbook Logo"></div>
+        <div class="col-md-3"><b>About</b><br>Software Engineering 2019<br>© Wyatt Harrell</div></div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  </p>
+  <center>{{footer}}</center>
+</footer>
+</body>
+
+</html>

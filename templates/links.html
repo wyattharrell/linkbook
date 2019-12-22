@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <link rel="stylesheet" type="text/css" href="CSS/home.css" media="screen" /> -->
+  <meta charset="UTF-8">
+  <title>{{title}} - {{category}}</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  <style>
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+  }
+
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+  }
+
+  #sidebar-wrapper .list-group {
+    width: 15rem;
+  }
+
+  #page-content-wrapper {
+    min-width: 100vw;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+    }
+  }
+
+  footer {
+    padding: 10px 20px;
+    background: #1D2024;
+    color: white;
+  }
+
+  body {
+    background-color: #F7F8FB;
+  }
+
+  .card {
+    /*    max-height: 525px;   */
+    box-shadow: 0px 0px 1px #555;
+    background-color: white;
+  }
+
+
+</style>
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-dark border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading"><a href="/categories"><img src="static/linkbook_logo_white.png" style="width:175px" alt="Linkbook Logo"></a></div>
+      <div class="list-group list-group-flush">
+        <a href="/dashboard" class="list-group-item list-group-item-action bg-dark"><font color="white">Dashboard</font></a>
+        <a href="/categories" class="list-group-item list-group-item-action bg-dark"><font color="white">Categories</font></a>
+        <a href="/all" class="list-group-item list-group-item-action bg-dark"><font color="white">All Links</font></a>
+        <a href="/logout" class="list-group-item list-group-item-action bg-dark"><font color="white">Logout</font></a>
+      </div>
+    </div>
+
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-light border-bottom">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <br><br>
+          </ul>
+        </div>
+      </nav>
+
+      <br>
+
+
+      <!--BREADCRUM-->
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+              <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{category}}</li>
+              <li class="breadcrumb-item"><a href="/all">All Links</a></li>
+            </ol></nav></div>
+            <div class="col-md-1"></div>
+          </div>
+
+          <!-- Jumbotron Header -->
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="jumbotron">
+                <h1 class="display-4">{{category}} category</h1>
+                <p class="lead">View previously added links or save new ones that you would like added to your {{category}} category.</p>
+                <hr class="my-4">
+                <form class="form-inline" method="post">
+                  <label class="sr-only" for="inlineFormInputName2">Name</label>
+                  <h6> Add a new link to your {{category}} category: </h6>
+                  <input type="text" class="form-control mb-2 mr-sm-2" id="myInput" style="width:90%" name="link" placeholder="Link...">
+                  <button type="submit"class="btn btn-secondary mb-2">Add</button>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+
+
+          <!-- LIST OF LINKS-->
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+              {% for dict_item in listOfLinks %}
+              {% if loop.index0 % 2 == 0 %}
+              <div class="card">
+                <img class="card-img-top" src="{{dict_item['IMAGE']}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="{{dict_item['URL']}}" target="_blank">{{dict_item["TITLE"]}}</a></h5>
+                  <p class="card-text">{{dict_item["SUMMARY"]}}</p>
+                  <p class="card-text"><small class="text-muted">{{dict_item["HOST"]}}</small></p>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <a href="{{url_for('links', type=category, title=dict_item['TITLE'], share=True)}}"><button type="button" class="btn btn-secondary">Related</button></a>
+                      <!-- AddToAny BEGIN -->
+                      <a class="a2a_dd" data-a2a-url="{{dict_item['URL']}}" href="https://www.addtoany.com/share"><button type="button" class="btn btn-secondary">Share</button></a>
+                      <script async src="https://static.addtoany.com/menu/page.js"></script>
+                      <!-- AddToAny END -->
+                      <a href="{{url_for('links', type=category, title=dict_item['TITLE'], delete=True)}}"><button type="button" class="btn btn-danger">Remove</button></a>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div><br>
+              {% endif %}
+              {% endfor %}
+            </div>
+            <div class="col-md-5">
+              {% for dict_item in listOfLinks %}
+              {% if loop.index0 % 2 == 1 %}
+              <div class="card">
+                <img class="card-img-top" src="{{dict_item['IMAGE']}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="{{dict_item['URL']}}" target="_blank">{{dict_item["TITLE"]}}</a></h5>
+                  <p class="card-text">{{dict_item["SUMMARY"]}}</p>
+                  <p class="card-text"><small class="text-muted">{{dict_item["HOST"]}}
+                  </small>
+                </p>
+              </div>
+              <div class="card-footer">
+
+                <div class="row">
+                  <div class="col-md-8">
+                    <a href="{{url_for('links', type=category, title=dict_item['TITLE'], share=True)}}"><button type="button" class="btn btn-secondary">Related</button></a>
+                    <!-- AddToAny BEGIN -->
+                    <a class="a2a_dd" data-a2a-url="{{dict_item['URL']}}" href="https://www.addtoany.com/share"><button type="button" class="btn btn-secondary">Share</button></a>
+                    <script async src="https://static.addtoany.com/menu/page.js"></script>
+                    <!-- AddToAny END -->
+                    <a href="{{url_for('links', type=category, title=dict_item['TITLE'], delete=True)}}"><button type="button" class="btn btn-danger">Remove</button></a>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div><br>
+          {% endif %}
+          {% endfor %}
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+          <img src="static/linkbook_logo_white.png" style="width:250px" alt="Linkbook Logo"></div>
+          <div class="col-md-3"><b>About</b><br>Software Engineering 2019<br>© Wyatt Harrell</div></div>
+          <div class="col-md-1"></div>
+        </div>
+      </div>
+    </p>
+    <center>{{footer}}</center>
+  </footer>
+</body>
+
+</html>

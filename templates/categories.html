@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--<link rel="stylesheet" type="text/css" href="CSS/home.css" media="screen" />-->
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <style>
+
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+  }
+
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+  }
+
+  #sidebar-wrapper .list-group {
+    width: 15rem;
+  }
+
+  #page-content-wrapper {
+    min-width: 100vw;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+    }
+  }
+
+  .card-body {
+    background-color: #eee; /*E9ECEF*/
+    color: #444;
+    /*    cursor: pointer;*/
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+
+  #limheight {
+    height: 300px;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+
+  #limheight li {
+    display: inline-block;
+  }
+
+  body {
+    background-color: #F7F8FB;
+  }
+
+  footer {
+    padding: 10px 20px;
+    background: #1D2024;
+    color: white;
+  }
+
+  .thumbnail {
+    position: relative;
+  }
+
+  .caption {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+  }
+
+</style>
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-dark border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading"><a href="/categories"><img src="static/linkbook_logo_white.png" style="width:175px" alt="Linkbook Logo"></a></div>
+      <div class="list-group list-group-flush">
+        <a href="/dashboard" class="list-group-item list-group-item-action bg-dark"><font color="white">Dashboard</font></a>
+        <a href="/categories" class="list-group-item list-group-item-action bg-dark"><font color="white">Categories</font></a>
+        <a href="/all" class="list-group-item list-group-item-action bg-dark"><font color="white">All Links</font></a>
+        <a href="/logout" class="list-group-item list-group-item-action bg-dark"><font color="white">Logout</font></a>
+      </div>
+    </div>
+
+
+    <!-- BLANK NAVBAR -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-light border-bottom">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <br><br>
+          </ul>
+        </div>
+      </nav>
+
+      <br>
+
+      <!--BREADCRUM-->
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Categories</li>
+              <li class="breadcrumb-item"><a href="/all">All Links</a></li>
+            </ol></nav></div>
+            <div class="col-md-1"></div>
+          </div>
+
+          <!--BANNER-->
+          <!--ADD CATEGORY-->
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="row" id="box-search">
+                <div class="thumbnail text-center">
+                  <img src="static/categories.png" style="width:97%" alt="" class="img-responsive">
+                  <div class="caption">
+                    <br>
+                    <div class="row">
+                      <div class="col-md-1"></div>
+                      <div class="col-md-10">
+                        <form class="form-inline" method="post">
+                          <label class="sr-only" for="inlineFormInputName2">Category</label>
+                          <input type="text" class="form-control mb-2 mr-sm-2" id="myInput" style="width:88%" name="category" placeholder="Category...">
+                          <button type="submit" class="btn btn-secondary mb-2">Create</button>
+                        </form></div>
+                        <div class="col-md-1"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+
+            <br>
+
+            <!-- LIST OF CATEGORIES-->
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-5">
+                {% if listOfCategories %}
+                {% for x in listOfCategories %}
+                {% if loop.index0 % 2 == 0 %}
+                <center>
+                  <div class="card" style="width: 29rem;">
+                    <div class="card-body">
+                      <h5 class="card-title"><a href="{{url_for('links', type=x)}}">{{x}}</a></h5>
+                      <p class="card-text">View previously added links or save new ones that you would like added to your {{x}} category.</p>
+                      <a href="{{url_for('categories', type=x, delete=True)}}"><img src="static/trashcan.png" style="width:35px" align="right" alt="Delete Category"></a>
+                      <a href="{{url_for('links', type=x)}}"><img src="static/plussign.png" style="width:35px" align="right" alt="Add to Category"></a>
+                    </div>
+                  </div>
+                  <br>
+                </center>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+              </div>
+
+              <div class="col-md-5">
+                {% if listOfCategories %}
+                {% for x in listOfCategories %}
+                {% if loop.index0 % 2 == 1 %}
+                <center>
+                  <div class="card" style="width: 29rem;" align="right">
+                    <div class="card-body">
+                      <h5 class="card-title"><a href="{{url_for('links', type=x)}}">{{x}}</a></h5>
+                      <p class="card-text">View previously added links or save new ones that you would like added to your {{x}} category.</p>
+                      <a href="{{url_for('categories', type=x, delete=True)}}"><img src="static/trashcan.png" style="width:35px" align="right" alt="Delete Category"></a>
+                      <a href="{{url_for('links', type=x)}}"><img src="static/plussign.png" style="width:35px" align="right" alt="Add to Category"></a>
+                    </div>
+                  </div>
+                  <br>
+                </center>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+            <br>
+            <br>
+          </div>
+        </div>
+        
+        <footer>
+          <p>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-8">
+                <img src="static/linkbook_logo_white.png" style="width:250px" alt="Linkbook Logo"></div>
+                <div class="col-md-3"><b>About</b><br>Software Engineering 2019<br>© Wyatt Harrell</div></div>
+                <div class="col-md-1"></div>
+              </div>
+            </div>
+          </p>
+          <center>{{footer}}</center>
+        </footer>
+
+      </body>
+      </html>
