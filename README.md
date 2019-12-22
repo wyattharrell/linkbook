@@ -29,4 +29,7 @@ http://localhost:5000/
 
 ## Screenshots:
 
-screenshots will go here
+![Home](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/home.png?token=AFAYOTO6XASR6RG2FSKPAPS6BEYQ4)
+
+
+![Categories](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/cats.png?token=AFAYOTMOKVDB7OXG2QRITDS6BEZTO)
