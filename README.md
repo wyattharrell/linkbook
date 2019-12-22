@@ -14,7 +14,7 @@ Install the requirements: `pip install -r requirements.txt`. The main dependenci
 
 ## Configuration:
 
-You will need to create a Firebase database (for storing links, login/register authentication, etc.) as well as a Google API key (for use of the *googleapiclient.discovery library*). Once this is complete, place your API key in `api_key=""` and Firebase project configuration in `config={}`. Both variables are located in `linkbook.py` 
+You will need to create a Firebase database (for storing links, login/register authentication, etc.) as well as a Google API key (for use of the *googleapiclient.discovery* library). Once this is complete, place your API key in `api_key=""` and Firebase project configuration in `config={}`. Both variables are located in `linkbook.py` 
 
 ## Launching Linkbook:
 
