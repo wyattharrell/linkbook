@@ -4,13 +4,13 @@
 
 # Linkbook
 
-Linkbook is a powerful web app that can store your favorite links, keep you organized, and much more. Linkbook does all the heavy lifting for you by parsing websites to give you a clean and clear snapshot of each page you save by grabbing the websites top image, title, and summary. It also recommends related articles based on keywords found in each website you save.
+Linkbook is a powerful web app that can store your favorite links, keep you organized, and much more. Linkbook does all the heavy lifting for you by parsing websites to give you a clean and clear snapshot of each page you save by grabbing the website's top image, title, and summary. It also recommends related articles based on keywords found in each website you save.
 
 ![Home](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/cardexample.png?token=AFAYOTPBEHK6AYNMNM2F2ES6BE2UW)
 
 ## Installation:
 
-Install the requirements: `pip install -r requirements.txt` , main dependencies are Flask and Pyrebase. However, there are a few libraries required for web scraping.
+Install the requirements: `pip install -r requirements.txt`. The main dependencies are Flask and Pyrebase. However, there are a few other libraries required for web scraping.
 
 ## Configuration:
 
