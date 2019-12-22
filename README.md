@@ -1,5 +1,5 @@
 <div align="center">
-	<img src="WEBSITE/static/linkbook_logo_main.png" alt="Linkbook Logo">
+	<img src="static/linkbook_logo_main.png" alt="Linkbook Logo">
 </div>
 
 
