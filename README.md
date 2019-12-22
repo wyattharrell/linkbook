@@ -35,3 +35,7 @@ http://localhost:5000/
 ![Categories](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/cats.png?token=AFAYOTMOKVDB7OXG2QRITDS6BEZTO)
 
 ![Videos Category](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/videos.png?token=AFAYOTI6G76KWWFYLEJ22V26BE2YI)
+
+![All Category](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/all.png?token=AFAYOTOYRNPRUEHDBATYNOC6BE45Q)
+
+![Dashboard](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/dashboard.png?token=AFAYOTLNQ5JAHINJALTSOUK6BE45I)
