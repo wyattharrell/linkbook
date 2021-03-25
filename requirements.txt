@@ -29,7 +29,7 @@ pycryptodome==3.6.6
 Pyrebase==3.0.27
 python-dateutil==2.8.1
 python-jwt==2.0.1
-PyYAML==5.2
+PyYAML==5.4
 requests==2.20.0
 requests-file==1.4.3
 requests-toolbelt==0.7.0
