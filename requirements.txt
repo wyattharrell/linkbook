@@ -33,7 +33,7 @@ PyYAML==5.2
 requests==2.20.0
 requests-file==1.4.3
 requests-toolbelt==0.7.0
-rsa==4.0
+rsa==4.7
 six==1.13.0
 soupsieve==1.9.5
 tinysegmenter==0.3
