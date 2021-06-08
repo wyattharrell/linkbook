@@ -21,7 +21,7 @@ MarkupSafe==1.1.1
 newspaper3k==0.2.8
 nltk==3.4.5
 oauth2client==3.0.0
-Pillow==6.2.1
+Pillow==8.2.0
 protobuf==3.11.2
 pyasn1==0.4.8
 pyasn1-modules==0.2.7
