@@ -6,7 +6,7 @@
 
 Linkbook is a powerful web app that can store your favorite links, keep you organized, and much more. Linkbook does all the heavy lifting for you by parsing websites to give you a clean and clear snapshot of each page you save by grabbing the website's top image, title, and summary. It also recommends related articles based on keywords found in each website you save.
 
-![Home](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/cardexample.png?token=AFAYOTPBEHK6AYNMNM2F2ES6BE2UW)
+![Home](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/cardexample.png)
 
 ## Installation:
 
@@ -30,12 +30,12 @@ http://localhost:5000/
 
 ## Screenshots:
 
-![Home](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/home.png?token=AFAYOTO6XASR6RG2FSKPAPS6BEYQ4)
+![Home](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/home.png)
 
-![Categories](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/cats.png?token=AFAYOTMOKVDB7OXG2QRITDS6BEZTO)
+![Categories](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/cats.png)
 
-![Videos Category](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/videos.png?token=AFAYOTI6G76KWWFYLEJ22V26BE2YI)
+![Videos Category](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/videos.png)
 
-![All Category](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/all.png?token=AFAYOTOYRNPRUEHDBATYNOC6BE45Q)
+![All Category](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/all.png)
 
-![Dashboard](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/dashboard.png?token=AFAYOTLNQ5JAHINJALTSOUK6BE45I)
+![Dashboard](https://raw.githubusercontent.com/wyattharrell/linkbook/master/static/website/dashboard.png)
